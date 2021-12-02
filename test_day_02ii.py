@@ -1,5 +1,5 @@
 import unittest
-from day_02ii import product
+from day_02ii import submarine_product
 
 INPUT_PATH = './fixtures/day-02.txt'
 
@@ -20,7 +20,7 @@ class TestDay02Part2(unittest.TestCase):
             ('down', 8),
             ('forward', 2)
         ]
-        self.assertEqual(product(commands), 900)
+        self.assertEqual(submarine_product(commands), 900)
 
     def test_actual(self):
-        self.assertEqual(product(self.commands), 1982495697)
+        self.assertEqual(submarine_product(self.commands), 1982495697)

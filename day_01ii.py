@@ -1,6 +1,6 @@
 from typing import List
 
-def increasing_windows(report: List[int], window_size = 3) -> int:
+def increasing_windows(report: List[int], window_size: int = 3) -> int:
     # efficient sliding window : remove the element exiting and add the incoming element to the sum
     window         = report[:window_size]
     num_lines      = len(report)

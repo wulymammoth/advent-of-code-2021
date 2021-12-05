@@ -9,13 +9,11 @@ def final_score(boards: List[Board], draws: List[int]) -> int:
             if row >= 0 and col >= 0 and is_winning(board, row, col):
                 return num * unmarked_sum(board)
 
-def is_winning(board: Board, row: int, col: int) -> bool:
+def is_winning(board: Board, target_row: int, target_col: int) -> bool:
     rows, cols = len(board), len(board[0])
-    if sum(board[row]) == -rows:
-        return True
-    if sum([board[row][col] for col in range(cols)]) == -cols:
-        return True
-    return False
+    is_winning_row = sum(board[target_row]) == -rows
+    is_winning_col = sum([board[row][target_col] for row in range(rows)]) == -cols
+    return is_winning_row or is_winning_col
 
 def mark(board: Board, num: int) -> (int, int):
     rows, cols = len(board), len(board[0])

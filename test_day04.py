@@ -58,4 +58,4 @@ class TestDay04(unittest.TestCase):
         self.assertEqual(final_score(boards, draws), 4512)
 
     def test_actual(self):
-        self.assertEqual(final_score(self.boards, self.draws), 6552)
+        self.assertEqual(final_score(self.boards, self.draws), 44088)

@@ -13,7 +13,7 @@ def is_winning(board: Board, target_row: int, target_col: int) -> bool:
         return False
     rows, cols = len(board), len(board[0])
     is_winning_row = sum(board[target_row]) == -rows
-    is_winning_col = sum([board[row][target_col] for row in range(rows)]) == -cols
+    is_winning_col = sum(board[row][target_col] for row in range(rows)) == -cols
     return is_winning_row or is_winning_col
 
 def mark(board: Board, num: int) -> (Board, int, int):
@@ -26,9 +26,4 @@ def mark(board: Board, num: int) -> (Board, int, int):
     return board, -1, -1
 
 def unmarked_sum(board: Board) -> int:
-    summation = 0
-    for row in board:
-        for val in row:
-            if val > 0:
-                summation += val
-    return summation
+    return sum(sum(x if x > 0 else 0 for x in row) for row in board)

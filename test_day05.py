@@ -29,4 +29,4 @@ class TestDay05(unittest.TestCase):
         self.assertEqual(overlapping_vents(vents), 5)
 
     def test_actual(self):
-        self.assertEqual(overlapping_vents(self.vents), 5313)
+        self.assertEqual(overlapping_vents(self.vents), 5306)

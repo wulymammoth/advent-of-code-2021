@@ -5,6 +5,7 @@
   * day 2 - [part I](./day_02.py) | [part II](./day_02ii.py)
   * day 3 - [part I](./day_03.py) | [part II](./day_03ii.py)
   * day 4 - [part I](./day_04.py) | [part II](./day_04ii.py)
+  * day 5 - [part I](./day_05.py)
 * **tests** are written for each day's solution
   * the test file is named as such: `test_<n-th day>.py`
   * each test contains the provided input text file that is read into a test

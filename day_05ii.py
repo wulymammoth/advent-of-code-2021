@@ -17,5 +17,18 @@ def overlapping_vents(vents: List[CoordPair]) -> int:
                 for y in range(y1, y2 + 1):
                     counter[(x, y)] += 1
         else: # TODO: diagonal
-            pass
+            # capture dx, dy (slope)
+            (x1, y1), (x2, y2) = sorted(vent, key=lambda coord: coord[0])
+            dy, dx = y2 - y1, x2 - x1
+            slope = dy // dx
+            if slope == -1: # decreasing
+                x, y = min(x1, x2), max(y1, y2)
+                while x <= max(x1, x2) and y >= min(y1, y2):
+                    counter[(x, y)] += 1
+                    x += 1; y -= 1
+            else: # increasing
+                x, y = min(x1, x2), min(y1, y2)
+                while x <= max(x1, x2) and y <= max(y1, y2):
+                    counter[(x, y)] += 1
+                    x += 1; y += 1
     return reduce(lambda summation, x: summation + 1 if x > 1 else 0, counter.values(), 0)
